@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Makes desktop and mobile websites look the same-->
-    <link rel="stylesheet" type = "text/css" href="game.css">
+    <link rel="stylesheet" type="text/css" href="game.css">
     <script src="game.js"></script>
-    <title>Floppy Birb</title>
-    <h1>Floppy Birb</h1>
-    
-    <!-- <img id = "birb" src="https://github.com/Basilisk00/Basilisk00.github.io/blob/main/docs/assests/img/Birb.PNG.png?raw=true" alt="bird image" width = "400px" height = "500px"> -->
-
+    <title>Floppy Birb - Game</title>
 </head>
 <body onload="startGame()">
     
-    <div style="text-align:center;width:480px;">
-        <button onmousedown="goUp()" onmouseup="stopMove()" ontouchstart="goUp()" >UP</button> <br><br>
-        <button onmousedown="goLeft()" onmouseup="stopMove()" ontouchstart="goLeft()">LEFT</button>
-        <button onmousedown="goRight()" onmouseup="stopMove()" ontouchstart="goRight()">RIGHT</button> <br> <br>
-        <button onmousedown="goDown()" onmouseup="stopMove()" ontouchstart="goDown()">DOWN</button>
+    <!-- Header -->
+    <header class="game-header">
+        <div class="game-header-content">
+            <h1>Floppy Birb</h1>
+            <p>Navigate through the obstacles and beat your high score!</p>
+        </div>
+    </header>
+
+    <!-- Game Container -->
+    <div class="game-container">
+        <!-- Score Display -->
+        <div class="score-display">
+            <div class="score-item">
+                <p>Current Score</p>
+                <span class="score-value" id="scoreValue">0</span>
+            </div>
+            <div class="score-item">
+                <p>High Score</p>
+                <span class="score-value" id="highScoreValue">0</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas inserted here by JavaScript -->
+
+        <!-- Instructions -->
+        <div class="game-instructions">
+            <p>Press <strong>SPACE</strong> to start</p>
+            <p>Press <strong>SPACE</strong> again after losing to restart</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="game-nav">
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
     </div>
     
 </body>
-    <a href="index.html"> Go back?</a>
 </html>
