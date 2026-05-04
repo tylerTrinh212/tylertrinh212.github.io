@@ -165,14 +165,24 @@ function component(width,height,color,x,y,type) {
       this.gravitySpeed = -5;
     }
     this.y += this.speedY + this.gravitySpeed;
+
+    // Ceiling: prevent moving above the top of the canvas
+    if (this.y < 0) {
+      this.y = 0;
+      this.gravitySpeed = 0;
+    }
+
+    // End the game when the player moves out of bounds at the bottom
+    if (this.y + this.height > myGameArea.canvas.height) {
+      myGameArea.stop();
+    }
   }
 
   this.hitBottom = function () {
-    var screenBottom = myGameArea.canvas.height - this.height;// Subtract height of player so it stays within bounds still
+    var screenBottom = myGameArea.canvas.height - this.height;
 
     if (this.y > screenBottom) {
-      this.y = screenBottom;
-      myGameArea.stop(); 
+      myGameArea.stop();
     }
   }
 
